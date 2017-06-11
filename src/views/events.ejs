@@ -1,0 +1,36 @@
+<html>
+<head>
+	
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/index.css">
+	<!-- endinject -->
+	
+</head>
+<body style="color:white;">
+	<div id="linkbar" style="text-align:center;">
+		<% for(var j=0; j<nav.length; j++){ %>
+			<div id="link" style="display:inline-block;"> 
+				<a href="/<%= nav[j].link %>"><%= nav[j].text %></a>
+			</div>
+		<% } %>
+	</div>
+	I am the events main page from index.html
+	<ul>
+		<% for(var i=0; i<events.length; i++){ %>
+			<li> 
+				<div><a href="/env/<%= events[i]._id %>"><%= events[i].name %></a> - <%= events[i].date %> : capacity= <%= events[i].capacity %></div>
+			</li>
+		<% } %>
+	</ul>
+	
+	<!-- bower:js -->
+	<script src="../../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- inject:js -->
+	<script src="/js/index.js"></script>
+	<!-- endinject -->
+	
+</body>
+</html>

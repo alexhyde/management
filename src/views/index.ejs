@@ -9,8 +9,21 @@
 	
 </head>
 <body style="color:white;">
+	<div id="linkbar" style="text-align:center;">
+		<% for(var j=0; j<nav.length; j++){ %>
+			<div id="link" style="display:inline-block;"> 
+				<a href="<%= /nav[j].link %>"><%= nav[j].text %></a>
+			</div>
+		<% } %>
+	</div>
 	I am the main page from index.html
-	
+	<ul>
+		<% for(var i=0; i<list.length; i++){ %>
+			<li> 
+				<%= list[i] %>
+			</li>
+		<% } %>
+	</ul>
 	
 	<!-- bower:js -->
 	<script src="../../bower_components/jquery/dist/jquery.js"></script>
