@@ -32,14 +32,14 @@ gulp.task('compile-ts', function(){
 		config.allTs
 	];
 		
-	//var tsResult = gulp
-	//	.src(sourceTsFiles)
-	//	.pipe(sourcemaps.init())
-	//	.pipe(tsc(tsProject));
+	var tsResult = gulp
+		.src(sourceTsFiles)
+		.pipe(sourcemaps.init())
+		.pipe(tsc(tsProject));
 	
-	var tsResult = tsProject.src(sourceTsFiles) // instead of gulp.src(...)
-       .pipe(sourcemaps.init())
-	   .pipe(tsc(tsProject));
+	//var tsResult = tsProject.src(sourceTsFiles) // instead of gulp.src(...)
+    //   .pipe(sourcemaps.init())
+	//   .pipe(tsc(tsProject));
 		
 		return tsResult.js
 		    .pipe(sourcemaps.write('.'))

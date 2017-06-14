@@ -13,10 +13,10 @@ express.use(expressImport.static('./node_modules'));
 //express.set('views','./src/views');
 //express.set('view engine', 'ejs');
 
-express.use('/qa',qaRouter);
-express.use('/pm',pmRouter);
+express.use('/qa*',qaRouter);
+express.use('/pm*',pmRouter);
 
-express.get('/',function(req,res){
+express.get('/*',function(req,res){
 	res.sendFile('./src/index.html', {root: __dirname });
 	//res.send('Main Page');
 	//res.render('index',{
