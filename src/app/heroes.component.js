@@ -45,7 +45,7 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.delete = function (hero) {
         var _this = this;
         this.heroService
-            .delete(hero.identifier)
+            .delete(hero.name)
             .then(function () {
             _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
             if (_this.selectedHero === hero) {

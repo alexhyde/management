@@ -50,14 +50,14 @@ var HeroService = (function () {
         return this.http
             .post(url, JSON.stringify({ name: name }), { headers: this.headers })
             .toPromise()
-            .then(function (res) { return res.json().ops; })
+            .then(function (res) { return res.json(); })
             .catch(this.handleError);
     };
-    HeroService.prototype.delete = function (id) {
-        var url = this.heroesUrl + 'data/' + id;
+    HeroService.prototype.delete = function (name) {
+        var url = this.heroesUrl + 'data/' + name;
         return this.http.delete(url, { headers: this.headers })
             .toPromise()
-            .then(function (res) { return console.log(res); })
+            .then(function () { return null; })
             .catch(this.handleError);
     };
     HeroService.prototype.handleError = function (error) {

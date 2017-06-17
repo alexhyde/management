@@ -47,16 +47,15 @@ export class HeroService {
 		return this.http
 		.post(url, JSON.stringify({name: name}), {headers: this.headers})
 		.toPromise()
-		.then(res => res.json().ops as Hero)		
+		.then(res => res.json() as Hero)	
 		.catch(this.handleError);
 	}
 	
-	delete(id: number): Promise<void> {
-		const url = this.heroesUrl + 'data/' + id;
+	delete(name: string): Promise<void> {
+		const url = this.heroesUrl + 'data/' + name;
 		return this.http.delete(url, {headers: this.headers})
 		.toPromise()
-		//.then(() => null)
-		.then(res =>console.log(res))
+		.then(() => null)
 		.catch(this.handleError);
 	}
 	
